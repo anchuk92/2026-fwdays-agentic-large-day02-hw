@@ -60,11 +60,12 @@ Conventions to follow:
 4. **Create test file** (`$0.test.tsx`):
 
 ```tsx
-import { render } from "../../tests/test-utils";
+import { render, unmountComponent  } from "../../tests/test-utils";
 import { Excalidraw } from "../../index";
 
 describe("$0", () => {
   beforeEach(async () => {
+    unmountComponent();
     await render(<Excalidraw />);
   });
 

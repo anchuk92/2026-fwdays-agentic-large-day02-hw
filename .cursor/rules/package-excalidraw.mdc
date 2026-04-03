@@ -1,8 +1,6 @@
 ---
 description: Rules specific to the main excalidraw package — imports, state, components
-globs:
-  - "packages/excalidraw/**/*.ts"
-  - "packages/excalidraw/**/*.tsx"
+globs: "packages/**/*.test.ts,packages/**/*.test.tsx"
 alwaysApply: false
 ---
 

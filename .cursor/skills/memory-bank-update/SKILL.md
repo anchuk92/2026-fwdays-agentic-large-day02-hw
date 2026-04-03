@@ -1,6 +1,6 @@
 ---
 name: memory-bank-update
-description: Updates the Memory Bank (docs/memory/) with recent changes, ensuring all technical details are accurate and up to date. Use when the user asks to update the memory bank, sync documentation, or refresh project context.
+description: Updates the Memory Bank (dev-docs/docs/memory/) with recent changes, ensuring all technical details are accurate and up to date. Use when the user asks to update the memory bank, sync documentation, or refresh project context.
 allowed-tools: Read, Grep, Glob, Bash, Edit
 argument-hint: [what changed or "auto" to detect from git]
 ---
@@ -18,7 +18,7 @@ Triggered by: "update memory bank", "sync docs", "refresh project docs".
 
 ## Memory Bank Structure
 
-All files live in `docs/memory/`. Each has a distinct role:
+All files live in `dev-docs/docs/memory/`. Each has a distinct role:
 
 | File | Role | Update when... |
 |------|------|----------------|
@@ -31,10 +31,10 @@ All files live in `docs/memory/`. Each has a distinct role:
 | `decisionLog.md` | Append-only decision log | Non-obvious technical decisions are made |
 
 Extended docs (update only if deeply affected):
-- `docs/technical/architecture.md` — diagrams, data flow, rendering pipeline
-- `docs/technical/dev-setup.md` — onboarding steps
-- `docs/product/domain-glossary.md` — term definitions
-- `docs/product/PRD.md` — product requirements
+- `dev-docs/docs/technical/architecture.md` — diagrams, data flow, rendering pipeline
+- `dev-docs/docs/technical/dev-setup.md` — onboarding steps
+- `dev-docs/docs/product/domain-glossary.md` — term definitions
+- `dev-docs/docs/product/PRD.md` — product requirements
 
 ## Steps
 

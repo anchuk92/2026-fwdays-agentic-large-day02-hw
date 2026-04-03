@@ -1,6 +1,6 @@
 ---
 description: "Protected files that should not be modified"
-globs: "packages/excalidraw/**"
+globs: "packages/**/*.test.ts,packages/**/*.test.tsx"
 alwaysApply: true
 ---
 

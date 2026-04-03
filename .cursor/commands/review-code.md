@@ -8,15 +8,27 @@ argument-hint: [file path, PR number, or "staged" for git staged changes]
 
 # Review Code
 
-Review the following code: $ARGUMENTS
+## How to use this command
+
+Type your target after the command in the chat — Cursor appends it as plain text. There is no variable substitution (`$ARGUMENTS`, `$0`, etc. are not supported).
+
+**Usage examples:**
+
+- `/review-code path/to/file.ts` — Review a specific file and its recent changes
+- `/review-code 42` — Review PR #42 (Claude will run `gh pr diff 42`)
+- `/review-code staged` — Review staged changes (Claude will run `git diff --cached`)
+- `/review-code` (no argument) — Review all unstaged changes (Claude will run `git diff`)
+
+**What Claude does for each scenario:**
+
+| Input | Action |
+|---|---|
+| File path | Reads the file; runs `git diff <path>` for recent changes |
+| PR number | Runs `gh pr diff <number>` to fetch the pull request diff |
+| `staged` | Runs `git diff --cached` to review staged changes |
+| _(nothing)_ | Runs `git diff` to review all unstaged changes |
 
 ## What to review
-
-Get the diff to review:
-- If a file path is given, read that file and check recent changes with `git diff` on it
-- If a PR number is given, use `gh pr diff $0`
-- If "staged" is given, use `git diff --cached`
-- If no argument, use `git diff` for unstaged changes
 
 ## Checklist
 
