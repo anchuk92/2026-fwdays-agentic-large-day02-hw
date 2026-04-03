@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Excalidraw — open-source virtual whiteboard for sketching hand-drawn diagrams. React + TypeScript monorepo with Canvas 2D rendering powered by RoughJS.
+Excalidraw is an open-source virtual whiteboard for sketching hand-drawn diagrams, used by millions of developers and designers worldwide. It is built as a React + TypeScript monorepo with Canvas 2D rendering powered by RoughJS, giving all shapes a distinctive hand-drawn aesthetic. The project ships both a full-featured PWA at excalidraw.com (with real-time collaboration via socket.io, Firebase storage, and Sentry error tracking) and an embeddable `@excalidraw/excalidraw` React component library that third parties can integrate into their own applications. The codebase is organized into focused packages (`common`, `math`, `element`, `excalidraw`, `utils`) with a strict one-directional dependency graph to keep the library lean and tree-shakeable. Development relies on Yarn workspaces, Vite for the app, esbuild for library packages, and Vitest for testing, with a zero-warnings ESLint policy enforced in CI.
 
 ## Project Structure
 

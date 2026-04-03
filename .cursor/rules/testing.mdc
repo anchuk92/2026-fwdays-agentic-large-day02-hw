@@ -1,4 +1,4 @@
-Cope---
+---
 description: "Testing conventions and patterns for Excalidraw"
 globs: "packages/**/*.test.ts,packages/**/*.test.tsx"
 alwaysApply: false
