@@ -1,0 +1,42 @@
+---
+description: Rules specific to the main excalidraw package — imports, state, components
+globs:
+  - "packages/excalidraw/**/*.ts"
+  - "packages/excalidraw/**/*.tsx"
+alwaysApply: false
+---
+
+# Excalidraw Package Rules
+
+This rule applies only to files inside `packages/excalidraw/`.
+
+## Imports
+
+- Use **direct relative imports** — do NOT import from the barrel `index.tsx`.
+- Import cross-package dependencies via `@excalidraw/*` aliases (e.g., `@excalidraw/common`, `@excalidraw/math`).
+- Never import from `excalidraw-app` — the dependency direction is one-way.
+
+## State Management (Jotai)
+
+- Import `atom`, `useAtom`, etc. from `../editor-jotai` — never from `jotai` directly.
+- Atom names should end with `Atom` suffix (e.g., `isEraserActiveAtom`).
+- Keep atoms close to where they are used; avoid a centralized atoms file.
+
+## Components
+
+- Colocate SCSS with the component file (e.g., `MyComponent.tsx` + `MyComponent.scss`).
+- Use the tunnels pattern (`context/tunnels.ts`) for rendering UI in portals — do not use raw `createPortal`.
+- Use `withInternalFallback` HOC when providing default implementations for optional UI.
+- Sub-components use `Object.assign` pattern (e.g., `Sidebar.Tabs`).
+
+## Actions
+
+- User interactions go through the action system in `actions/`.
+- Each action has a `name`, `perform`, and optional `keyTest` / `PanelComponent`.
+- Register new actions in `actions/index.ts`.
+
+## How to verify
+
+- Check imports: `grep -r "from \"jotai\"" packages/excalidraw/` should return no results.
+- Check barrel imports: `grep -r "from \"./index\"" packages/excalidraw/` should return no results.
+- Verify SCSS colocation: every new `.tsx` component with styles should have a matching `.scss` file.
