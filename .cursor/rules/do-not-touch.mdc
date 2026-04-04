@@ -1,6 +1,6 @@
 ---
 description: "Protected files that should not be modified"
-globs: "packages/**/*.test.ts,packages/**/*.test.tsx"
+globs: "packages/**/*.ts,packages/**/*.tsx"
 alwaysApply: true
 ---
 
